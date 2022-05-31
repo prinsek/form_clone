@@ -1,0 +1,22 @@
+<div class="container">   
+    
+  <form [formGroup]="productForm">  
+    
+    <div formArrayName="quantities">  
+       
+      <div *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">  
+         
+            Quantity :  
+            <input type="text" formControlName="qty" class="form-control">  
+         
+            Price:  
+            <input type="text" formControlName="price" class="form-control">  
+        
+            <button (click)="removeQuantity(i)" class="btn btn-danger">Remove</button> 
+            </div>
+            </div> 
+        
+    <div width="150px"><button type="button" (click)="addQuantity()" class="btn btn-primary">Add More</button></div> 
+      
+  </form> 
+</div>  
